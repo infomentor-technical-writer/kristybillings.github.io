@@ -1,0 +1,52 @@
+# POST Single User Defined Table
+
+## Overvie 
+
+Creates a new user defined table (UDT). 
+
+**HTTP Method** POST
+
+**Endpoint URL** https://api.pepperi.com/v1.0/meta_data/user_defined_tables
+
+#### Headers
+
+| Name          | Type   | Description         |
+| ------------- | ------ | ------------------- |
+| Authorization | string | Authorization token |
+
+#### Request Body
+
+| Name | Type   | Description        |
+| ---- | ------ | ------------------ |
+|      | object | same as GET object |
+
+{% tabs %}
+{% tab title="200 " %}
+
+```javascript
+{
+  "TableID": "My UDT",
+  "MainKeyType": {
+    "ID": 35,
+    "Name": "Account External ID"
+  },
+  "SecondaryKeyType": {
+    "ID": 0,
+    "Name": "Any"
+  },
+  "CreationDate": "",
+  "ModificationDate": "",
+  "MemoryMode" : { "Dormant" : true, "Volatile" : false},
+  "Hidden" : false
+}
+```
+
+{% endtab %}
+{% endtabs %}
+
+#### Object <a href="#configuration-object" id="configuration-object"></a>
+
+| Attribute        | Type   | Value                                                                                                                                                                 |
+| ---------------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| MainKeyType      | object | **Options**: { "ID": 0, "Name": "Any"}, { "ID": 23, "Name": "Sales Rep External ID"}, { "ID": 35, "Name": "Account External ID"}, { "ID": 54, "Name": "Catalog Name"} |
+| SecondaryKeyType | object | **Options**: { "ID": 0, "Name": "Any"}, { "ID": 23, "Name": "Sales Rep External ID"}, { "ID": 35, "Name": "Account External ID"}, { "ID": 54, "Name": "Catalog Name"} |
